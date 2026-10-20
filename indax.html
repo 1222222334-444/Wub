@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Calculator</title>
+    <!-- Remixicons for UI icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="stayle.css">
+</head>
+<body>
+
+    <!-- Continuous Animated Mesh Gradient Background -->
+    <div class="gradient-bg">
+        <div class="color-blob blob-1"></div>
+        <div class="color-blob blob-2"></div>
+        <div class="color-blob blob-3"></div>
+        <div class="color-blob blob-4"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="calculator-card">
+        
+        <!-- Header Controls -->
+        <div class="calc-header">
+            <span class="logo-text"><i class="ri-calculator-line"></i> ProCalc</span>
+            <div class="header-actions">
+                <button id="toggle-sci-btn" title="Toggle Scientific Mode">
+                    <i class="ri-flask-line"></i>
+                </button>
+                <button id="toggle-history-btn" title="Toggle History">
+                    <i class="ri-history-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Display Area -->
+        <div class="display-container">
+            <div id="expression-display" class="expression-display"></div>
+            <div id="main-display" class="main-display">0</div>
+        </div>
+
+        <!-- Keypad Container -->
+        <div class="keypad-wrapper">
+            
+            <!-- Scientific Panel (Togglable) -->
+            <div class="sci-panel hidden" id="sci-panel">
+                <button class="btn sci-btn" data-action="sin">sin</button>
+                <button class="btn sci-btn" data-action="cos">cos</button>
+                <button class="btn sci-btn" data-action="tan">tan</button>
+                <button class="btn sci-btn" data-action="log">log</button>
+                <button class="btn sci-btn" data-action="ln">ln</button>
+                <button class="btn sci-btn" data-action="sqrt">√</button>
+                <button class="btn sci-btn" data-action="pow">x²</button>
+                <button class="btn sci-btn" data-action="pi">π</button>
+                <button class="btn sci-btn" data-action="e">e</button>
+                <button class="btn sci-btn" data-action="fact">n!</button>
+            </div>
+
+            <!-- Standard Keypad Grid -->
+            <div class="standard-grid">
+                <!-- Row 1 -->
+                <button class="btn action-btn danger-btn" data-action="clear">AC</button>
+                <button class="btn action-btn" data-action="delete"><i class="ri-backspace-line"></i></button>
+                <button class="btn action-btn" data-action="percent">%</button>
+                <button class="btn operator-btn" data-operator="÷">÷</button>
+
+                <!-- Row 2 -->
+                <button class="btn num-btn" data-num="7">7</button>
+                <button class="btn num-btn" data-num="8">8</button>
+                <button class="btn num-btn" data-num="9">9</button>
+                <button class="btn operator-btn" data-operator="×">×</button>
+
+                <!-- Row 3 -->
+                <button class="btn num-btn" data-num="4">4</button>
+                <button class="btn num-btn" data-num="5">5</button>
+                <button class="btn num-btn" data-num="6">6</button>
+                <button class="btn operator-btn" data-operator="-">-</button>
+
+                <!-- Row 4 -->
+                <button class="btn num-btn" data-num="1">1</button>
+                <button class="btn num-btn" data-num="2">2</button>
+                <button class="btn num-btn" data-num="3">3</button>
+                <button class="btn operator-btn" data-operator="+">+</button>
+
+                <!-- Row 5 -->
+                <button class="btn num-btn" data-action="toggle-sign">±</button>
+                <button class="btn num-btn" data-num="0">0</button>
+                <button class="btn num-btn" data-action="decimal">.</button>
+                <button class="btn equals-btn" data-action="calculate">=</button>
+            </div>
+        </div>
+
+        <!-- History Drawer -->
+        <div class="history-drawer hidden" id="history-drawer">
+            <div class="history-header">
+                <span>Calculation History</span>
+                <button id="clear-history-btn" title="Clear History"><i class="ri-delete-bin-line"></i></button>
+            </div>
+            <div class="history-list" id="history-list">
+                <p class="empty-history">No history yet</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
